@@ -1,23 +1,33 @@
 package ru.first.dryCleaning.config;
 
-import org.springframework.web.WebApplicationInitializer;
-import org.springframework.web.context.ContextLoaderListener;
-import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
-import org.springframework.web.filter.DelegatingFilterProxy;
+import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-import javax.servlet.ServletContext;
-
-public class AppInitializer implements WebApplicationInitializer {
+public class AppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+    @Override
+    protected Class<?>[] getRootConfigClasses() {
+        return new Class[0];
+    }
 
     @Override
-    public void onStartup(ServletContext sc) {
+    protected Class<?>[] getServletConfigClasses() {
+        return new Class[] {MySpringConfig.class};
+    }
 
-        AnnotationConfigWebApplicationContext root = new AnnotationConfigWebApplicationContext();
-        root.register(WebSecurityConfig.class);
-
-        sc.addListener(new ContextLoaderListener(root));
-
-        sc.addFilter("securityFilter", new DelegatingFilterProxy("springSecurityFilterChain"))
-                .addMappingForUrlPatterns(null, false, "/*");
+    @Override
+    protected String[] getServletMappings() {
+        return new String[] {"/"};
     }
 }
+
+//    @Override
+//    public void onStartup(ServletContext sc) {
+//        System.out.println("================================================ SD SAD SAD");
+//        AnnotationConfigWebApplicationContext root = new AnnotationConfigWebApplicationContext();
+//        System.out.println(root.getServletConfig());
+//        root.register(WebSecurityConfig.class);
+//
+//        sc.addListener(new ContextLoaderListener(root));
+//
+//        sc.addFilter("securityFilter", new DelegatingFilterProxy("springSecurityFilterChain"))
+//                .addMappingForUrlPatterns(null, false, "/*");
+//    }
