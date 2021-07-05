@@ -30,12 +30,10 @@ public class PostController {
     }
     @RequestMapping("/posts/update/{id}")
     public String update(@PathVariable(value="id") String id, Model model) {
-        System.out.println(id);
         Post post = postService.getPostById(Long.parseLong(id));
         if (post != null) {
             model.addAttribute("post", post);
         }
-        System.out.println(post);
         return "post/update";
     }
     @PostMapping("/posts/update/{id}")

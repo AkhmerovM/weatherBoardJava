@@ -16,28 +16,25 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(final AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
-                .withUser("user1").password(passwordEncoder().encode("user1Pass")).roles("USER")
+                .withUser("u1").password(passwordEncoder().encode("p1")).roles("USER")
                 .and()
-                .withUser("user2").password(passwordEncoder().encode("user2Pass")).roles("USER")
+                .withUser("u2").password(passwordEncoder().encode("p2")).roles("USER")
                 .and()
-                .withUser("admin").password(passwordEncoder().encode("adminPass")).roles("ADMIN");
+                .withUser("u3").password(passwordEncoder().encode("p3")).roles("ADMIN");
     }
     @Override
     protected void configure(final HttpSecurity http) throws Exception {
-        http
-                .csrf().disable()
-                .authorizeRequests()
-                .antMatchers("/admin/**").hasRole("ADMIN")
-                .antMatchers("/anonymous*").anonymous()
-                .antMatchers("/login*").permitAll()
-                .anyRequest().authenticated()
-                .and()
-                .formLogin()
-                .loginPage("/login.html")
-                .loginProcessingUrl("/perform_login")
-                .defaultSuccessUrl("/homepage.html", true)
-                .failureUrl("/login.html?error=true");
-    }
+            http
+                    .authorizeRequests()
+                    .anyRequest().authenticated()
+                    .and()
+                    .formLogin()
+                    .loginPage("/login")
+                    .permitAll()
+                    .and()
+                    .logout()
+                    .permitAll();
+        }
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();

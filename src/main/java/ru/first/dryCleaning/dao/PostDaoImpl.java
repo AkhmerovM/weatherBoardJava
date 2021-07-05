@@ -21,8 +21,6 @@ public class PostDaoImpl implements IPostDAO{
 
     @Override
     public void updatePost(long id, String text) {
-        System.out.println(id);
-        System.out.println(text);
         String sql = "UPDATE post SET text=? WHERE id=?";
         jdbcTemplate.update(sql, text, id);
     }

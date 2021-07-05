@@ -50,10 +50,15 @@
           <element id="library" level="project" name="Maven: org.springframework.data:spring-data-commons:2.5.1" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:5.3.8" />
           <element id="library" level="project" name="Maven: org.springframework:spring-tx:5.3.8" />
-          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-core:5.5.1" />
-          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-crypto:5.5.1" />
-          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-web:5.5.1" />
-          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-config:5.5.1" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-core:5.5.0" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-crypto:5.5.0" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-web:5.5.0" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-config:5.5.0" />
+          <element id="library" level="project" name="Maven: org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.0" />
+          <element id="library" level="project" name="Maven: org.jetbrains.kotlin:kotlin-stdlib:1.5.0" />
+          <element id="library" level="project" name="Maven: org.jetbrains:annotations:13.0" />
+          <element id="library" level="project" name="Maven: org.jetbrains.kotlin:kotlin-stdlib-common:1.5.0" />
+          <element id="library" level="project" name="Maven: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.0" />
         </element>
       </element>
       <element id="directory" name="META-INF">
