@@ -1,45 +1,36 @@
 package ru.first.dryCleaning.model;
 
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
+import lombok.Data;
 
-import java.util.Collection;
+import javax.persistence.*;
 
-public class User implements UserDetails {
+@Data
+@Entity
+@Table(name = "user")
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(columnDefinition = "id")
+    private Long id;
 
+    @Column(name = "email")
+    private String email;
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
-    }
+    @Column(name = "firstname")
+    private String firstname;
 
-    @Override
-    public String getPassword() {
-        return null;
-    }
+    @Column(name = "lastname")
+    private String lastname;
 
-    @Override
-    public String getUsername() {
-        return null;
-    }
+    @Column(name = "is_man")
+    private Boolean isMan;
 
-    @Override
-    public boolean isAccountNonExpired() {
-        return false;
-    }
+    @Column(name = "password")
+    private String password;
 
-    @Override
-    public boolean isAccountNonLocked() {
-        return false;
-    }
+    @Column(name = "role")
+    private String role;
 
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return false;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return false;
-    }
+    @Column(name = "is_active")
+    private Boolean isActive;
 }

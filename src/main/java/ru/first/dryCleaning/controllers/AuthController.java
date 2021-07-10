@@ -10,8 +10,4 @@ public class AuthController {
     public String login() {
         return "auth/login";
     }
-    @PostMapping("login")
-    public String loginPost() {
-        return "redirect:/posts";
-    }
 }

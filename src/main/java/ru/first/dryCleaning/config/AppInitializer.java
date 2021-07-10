@@ -5,7 +5,7 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 public class AppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[] {WebSecurityConfig.class};
+        return null;
     }
 
     @Override
@@ -18,16 +18,3 @@ public class AppInitializer extends AbstractAnnotationConfigDispatcherServletIni
         return new String[] {"/"};
     }
 }
-
-//    @Override
-//    public void onStartup(ServletContext sc) {
-//        System.out.println("================================================ SD SAD SAD");
-//        AnnotationConfigWebApplicationContext root = new AnnotationConfigWebApplicationContext();
-//        System.out.println(root.getServletConfig());
-//        root.register(WebSecurityConfig.class);
-//
-//        sc.addListener(new ContextLoaderListener(root));
-//
-//        sc.addFilter("securityFilter", new DelegatingFilterProxy("springSecurityFilterChain"))
-//                .addMappingForUrlPatterns(null, false, "/*");
-//    }
