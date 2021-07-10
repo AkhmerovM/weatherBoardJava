@@ -5,6 +5,6 @@ import ru.first.dryCleaning.model.User;
 
 import java.util.Optional;
 
-public interface IUserRepository extends JpaRepository<User, Long> {
+public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findByEmail(String email);
 }

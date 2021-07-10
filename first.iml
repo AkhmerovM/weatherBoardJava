@@ -23,6 +23,7 @@
         <fileset id="fileset" name="Spring Application Context" removed="false">
           <file>file://$MODULE_DIR$/src/main/java/ru/first/dryCleaning/config/MySpringConfig.java</file>
           <file>file://$MODULE_DIR$/src/main/java/ru/first/dryCleaning/config/WebSecurityConfig.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/ru/first/dryCleaning/config/PersistenceJPAConfig.java</file>
         </fileset>
       </configuration>
     </facet>

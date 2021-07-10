@@ -6,17 +6,24 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import ru.first.dryCleaning.model.User;
-import ru.first.dryCleaning.repository.IUserRepository;
+import ru.first.dryCleaning.repository.UserRepository;
 
+import javax.transaction.Transactional;
+import java.util.List;
+
+@Transactional
 @Service("userDetailsServiceImpl")
 public class UserDetailsServiceImpl implements UserDetailsService {
-    private final IUserRepository userRepository;
+    private final UserRepository userRepository;
 
     @Autowired
-    public UserDetailsServiceImpl(IUserRepository userRepository) {
+    public UserDetailsServiceImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
+    public List<User> listAll() {
+        return userRepository.findAll();
+    }
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         User user = userRepository.findByEmail(email).orElseThrow(() -> new UsernameNotFoundException("user not found"));
