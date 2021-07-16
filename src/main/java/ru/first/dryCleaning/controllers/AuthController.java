@@ -6,11 +6,8 @@ import ru.first.dryCleaning.service.UserDetailsServiceImpl;
 
 @Controller
 public class AuthController {
-    private UserDetailsServiceImpl userDetailsService;
-
     @GetMapping ("login")
     public String login() {
-        System.out.println(userDetailsService.listAll());
         return "auth/login";
     }
 

@@ -13,18 +13,18 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
-import ru.first.dryCleaning.repository.UserRepository;
 
 import javax.sql.DataSource;
 
 @Configuration
 @ComponentScan("ru.first.dryCleaning")
 @EnableWebMvc
-public class MySpringConfig implements WebMvcConfigurer {
+public class DispatcherServletConfig implements WebMvcConfigurer {
+    //TODO check applicationContext
     private ApplicationContext applicationContext;
 
     @Autowired
-    public void SpringConfig(ApplicationContext applicationContext) {
+    public void DispatcherServletConfig(ApplicationContext applicationContext) {
         this.applicationContext = applicationContext;
     }
 

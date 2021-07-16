@@ -10,7 +10,7 @@ public class AppInitializer extends AbstractAnnotationConfigDispatcherServletIni
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[] {MySpringConfig.class};
+        return new Class[] {DispatcherServletConfig.class};
     }
 
     @Override
