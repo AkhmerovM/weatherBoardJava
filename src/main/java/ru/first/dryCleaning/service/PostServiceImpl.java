@@ -1,44 +1,60 @@
 package ru.first.dryCleaning.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import ru.first.dryCleaning.dao.IPostDAO;
 import ru.first.dryCleaning.model.Post;
+import ru.first.dryCleaning.model.User;
+import ru.first.dryCleaning.repository.PostRepository;
 
 import java.util.List;
+import java.util.Optional;
+
 @Service
 public class PostServiceImpl implements IPostService{
     @Autowired
-    private IPostDAO postDAO;
+    private PostRepository postRepository;
+    // isNeed here userService ?
+    @Autowired
+    private IUserService userService;
     @Override
-    @Transactional
     public void addPost(String text) {
-        postDAO.addPost(text);
+        Long userId = userService.getAuthUserId();
+        if (userId != null) {
+            postRepository.save(new Post(userId, text));
+        }
     }
 
     @Override
-    @Transactional
-    public void updatePost(long id, String text) {
-        postDAO.updatePost(id, text);
+    public void updatePost(Long id, String text) {
+        if (postRepository.existsById(id)) {
+            Post post = postRepository.getById(id);
+            post.setText(text);
+           postRepository.save(post);
+        }
     }
 
     @Override
-    @Transactional
-    public void removePost(long id) {
-        postDAO.removePost(id);
-
+    public void removePost(Long id) {
+        if (postRepository.existsById(id)) {
+            postRepository.deleteById(id);
+        }
     }
 
     @Override
-    @Transactional
-    public Post getPostById(long id) {
-        return postDAO.getPostById(id);
+    public Post getPostById(Long id) {
+        if (postRepository.existsById(id)) {
+            return postRepository.getById(id);
+        }
+        return null;
     }
 
     @Override
-    @Transactional
     public List<Post> list() {
-        return postDAO.list();
+        return postRepository.findAll();
+    }
+    public Long getRandomValue(int min, int max) {
+        return Math.round((Math.random() * (max - min)) + min);
     }
 }

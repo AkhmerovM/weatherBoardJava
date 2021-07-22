@@ -1,5 +1,7 @@
 package ru.first.dryCleaning.model;
 
+import org.springframework.web.servlet.FrameworkServlet;
+
 import javax.persistence.*;
 
 @Entity
@@ -8,10 +10,10 @@ public class Post {
     @Id
     @Column(name="id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(name="author_id")
-    private long author_id;
+    private Long author_id;
 
     @Column(name="text")
     private String text;
@@ -19,25 +21,16 @@ public class Post {
     public Post() {
 
     }
-
-    @Id
-    public long getId() {
-        return id;
-    }
-    public Post(String text, long id) {
+    public Post(Long author_id, String text) {
+        this.author_id = author_id;
         this.text = text;
-        this.author_id = id;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public long getAuthor_id() {
+    public Long getAuthor_id() {
         return author_id;
     }
 
-    public void setAuthor_id(long author_id) {
+    public void setAuthor_id(Long author_id) {
         this.author_id = author_id;
     }
 
@@ -47,6 +40,19 @@ public class Post {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    @Override
+    public String toString() {
+        return "Post{" +
+                "id=" + id +
+                ", author_id=" + author_id +
+                ", text='" + text + '\'' +
+                '}';
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public void setId(Long id) {
