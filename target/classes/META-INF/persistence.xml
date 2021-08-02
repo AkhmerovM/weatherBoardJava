@@ -7,6 +7,7 @@
     <persistence-unit name="dryCleaning" transaction-type="RESOURCE_LOCAL">
 
         <properties>
+            <property name="hibernate.enable_lazy_load_no_trans" value="true" />
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" /> <!-- DB Driver -->
             <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/dryCleaning" /> <!-- BD Mane -->
             <property name="javax.persistence.jdbc.user" value="postgres" /> <!-- DB User -->

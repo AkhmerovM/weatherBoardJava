@@ -29,13 +29,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             http
                     .csrf().disable()
                         .authorizeRequests()
-                        .antMatchers("/").permitAll()
-                        .antMatchers("/admin/*").hasRole("Admin")
-                        .antMatchers("/posts/**").authenticated()
-                    .and()
-                        .formLogin().permitAll()
-                    .and()
-                        .logout().permitAll();
+                        .antMatchers("/").permitAll();
         }
         @Bean
     public PasswordEncoder passwordEncoder() {

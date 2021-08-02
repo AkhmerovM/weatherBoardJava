@@ -45,7 +45,9 @@ public class PostServiceImpl implements IPostService{
     @Override
     public Post getPostById(Long id) {
         if (postRepository.existsById(id)) {
-            return postRepository.getById(id);
+            Post post = postRepository.getById(id);
+            System.out.println(post.getText());
+            return post;
         }
         return null;
     }
