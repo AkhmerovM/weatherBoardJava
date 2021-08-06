@@ -1,40 +1,34 @@
 package ru.first.dryCleaning.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ru.first.dryCleaning.model.Post;
-import ru.first.dryCleaning.model.User;
 import ru.first.dryCleaning.service.IPostService;
-import ru.first.dryCleaning.service.IUserService;
-import ru.first.dryCleaning.service.UserServiceImpl;
 
 import java.util.List;
-import java.util.Optional;
-
+@RequestMapping(value = "/posts",  produces = "text/plain;charset=UTF-8")
 @Controller
 public class PostController {
     @Autowired
     private IPostService postService;
-    @GetMapping("/posts")
+    @GetMapping("")
     public String index(Model model) {
         List<Post> posts = postService.list();
         model.addAttribute("posts",  posts);
         return "/post/posts";
     }
-    @GetMapping("/posts/create")
+    @GetMapping("/create")
     public String create() {
         return "/post/create";
     }
-    @PostMapping("/posts/create")
+    @PostMapping("/create")
     public String createPost(String text) {
         postService.addPost(text);
         return "redirect:/posts";
     }
-    @RequestMapping("/posts/update/{id}")
+    @RequestMapping("/update/{id}")
     public String update(@PathVariable(value="id") String id, Model model) {
         Post post = postService.getPostById(Long.parseLong(id));
         if (post != null) {
@@ -42,12 +36,12 @@ public class PostController {
         }
         return "post/update";
     }
-    @PostMapping("/posts/update/{id}")
+    @PostMapping("/update/{id}")
     public String updatePost(@PathVariable(value="id") String id, String text) {
         postService.updatePost(Long.parseLong(id), text);
         return "redirect:/posts";
     }
-    @RequestMapping("/posts/remove/{id}")
+    @RequestMapping("/remove/{id}")
     public String remove(@PathVariable(value="id") String id, Model model) {
         postService.removePost(Long.parseLong(id));
         return "redirect:/posts";

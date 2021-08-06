@@ -14,8 +14,8 @@
 <div th:each="post : ${posts}" style="margin-bottom: 10px">
     <b th:text="${post.id}"></b>
     <i th:text="${post.text}"></i>
-    <a th:href="'/posts/update/' + ${post.id}" style="padding: 5px; background-color: #b37a37; margin: 20px" >Update</a>
-    <a th:href="'/posts/remove/' + ${post.id}" style="padding: 5px; background-color: #b37a37; margin: 20px" >Remove</a>
+    <a th:href="'/posts/update/' + ${post.id}" style="padding: 5px; background-color: #b37a37; margin: 20px" >Редактировать</a>
+    <a th:href="'/posts/remove/' + ${post.id}" style="padding: 5px; background-color: #b37a37; margin: 20px" >Удалить</a>
 </div>
 </div>
 <a href="/posts/create" style="padding: 10px; background-color: bisque; margin: 20px" >Create</a>

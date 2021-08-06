@@ -1,21 +1,16 @@
 package ru.first.dryCleaning.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import ru.first.dryCleaning.model.Post;
-import ru.first.dryCleaning.model.User;
 import ru.first.dryCleaning.repository.PostRepository;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
-public class PostServiceImpl implements IPostService{
+public class PostServiceImpl implements IPostService {
     @Autowired
     private PostRepository postRepository;
-    // isNeed here userService ?
     @Autowired
     private IUserService userService;
     @Override
@@ -45,9 +40,7 @@ public class PostServiceImpl implements IPostService{
     @Override
     public Post getPostById(Long id) {
         if (postRepository.existsById(id)) {
-            Post post = postRepository.getById(id);
-            System.out.println(post.getText());
-            return post;
+            return postRepository.getById(id);
         }
         return null;
     }

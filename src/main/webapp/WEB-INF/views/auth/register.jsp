@@ -1,38 +1,36 @@
-<html>
-<body>
-<h1 th:text="#{label.form.title}">form</h1>
-<form action="/" th:object="${user}" method="POST" enctype="utf8">
-    <div>
-        <label th:text="#{label.user.firstName}">first</label>
-        <input th:field="*{firstName}"/>
-        <p th:each="error: ${#fields.errors('firstName')}"
-           th:text="${error}">Validation error</p>
-    </div>
-    <div>
-        <label th:text="#{label.user.lastName}">last</label>
-        <input th:field="*{lastName}"/>
-        <p th:each="error : ${#fields.errors('lastName')}"
-           th:text="${error}">Validation error</p>
-    </div>
-    <div>
-        <label th:text="#{label.user.email}">email</label>
-        <input type="email" th:field="*{email}"/>
-        <p th:each="error : ${#fields.errors('email')}"
-           th:text="${error}">Validation error</p>
-    </div>
-    <div>
-        <label th:text="#{label.user.password}">password</label>
-        <input type="password" th:field="*{password}"/>
-        <p th:each="error : ${#fields.errors('password')}"
-           th:text="${error}">Validation error</p>
-    </div>
-    <div>
-        <label th:text="#{label.user.confirmPass}">confirm</label>
-        <input type="password" th:field="*{matchingPassword}"/>
-    </div>
-    <button type="submit" th:text="#{label.form.submit}">submit</button>
-</form>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 
-<a th:href="@{/WEB-INF/views/auth/login.jsp}" th:text="#{label.form.loginLink}">login</a>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Регистрация</title>
+</head>
+
+<body>
+<div>
+    <form:form method="POST" action="/auth/registration" modelAttribute="userForm">
+        <h2>Регистрация</h2>
+        <div>
+            <form:input type="text" path="email" placeholder="email"
+                        autofocus="true"></form:input>
+            <form:errors path="email"></form:errors>
+                ${usernameError}
+        </div>
+        <div>
+            <form:input type="password" path="password" placeholder="Password"></form:input>
+        </div>
+<%--        <div>--%>
+<%--            <form:input type="password" path="passwordConfirm"--%>
+<%--                        placeholder="Confirm your password"></form:input>--%>
+<%--            <form:errors path="password"></form:errors>--%>
+<%--                ${passwordError}--%>
+<%--        </div>--%>
+        <button type="submit">Зарегистрироваться</button>
+    </form:form>
+    <a href="/">Главная</a>
+</div>
 </body>
 </html>
