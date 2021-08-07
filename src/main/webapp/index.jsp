@@ -1,14 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-
 <html>
-
 <head>
+    <%@ include file="/WEB-INF/views/resources/header.jsp" %>
     <meta charset="utf-8">
-    <title>Регистрация</title>
+    <title>Main</title>
 </head>
 <body>
-<h2>Главная страница</h2>
-<a href="/posts" style="padding: 10px; background-color: bisque; margin: 20px" >Посты</a>
-<a href="/auth/registration" style="padding: 10px; background-color: bisque; margin: 20px" >Registration</a>
+<h2>Main Page</h2>
+<a href="/posts" role="button" class="btn btn-primary">Posts</a>
+<a  role="button" href="/auth/registration" class="btn btn-info">Registration</a>
 </body>
 </html>

@@ -1,39 +1,42 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-
-<!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" type='text/css' href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" type='text/css' href="/static/css/bootstrap-grid.min.css">
     <meta charset="utf-8">
-    <title>Регистрация</title>
+    <title>Registration</title>
 </head>
 
 <body>
-<div>
+<div class="d-flex justify-content-center">
+<div class="col-12 col-md-6">
+    <a href="/" class="btn badge-info" >Main Page</a>
     <form method="POST" action="/auth/registration" >
-        <h2>Регистрация</h2>
-        <div>
-            <input name="email" type="text"   placeholder="email"
-                        autofocus="true" value="dsa" />
+        <h2>Registration</h2>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email"  name="email" value="dsadsa@mail.ru" placeholder="Enter email">
         </div>
-        <div>
-            <input name="password"  type="password" value="3123212" placeholder="password" />
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password"  name="password" value="3123212" placeholder="Enter password">
         </div>
-        <div>
-            <input name="firstname"  type="text" value="ivan" placeholder="firstname" />
+        <div class="form-group">
+            <label for="firstname">Firstname</label>
+            <input type="text" class="form-control" id="firstname"  name="firstname" value="ivan" placeholder="Enter firstname">
         </div>
-        <div>
-            <input name="lastname"  type="text"  value="ivanov" placeholder="lastname" />
+        <div class="form-group">
+            <label for="lastname">Lastname</label>
+            <input type="text" class="form-control" id="lastname"  name="lastname" value="ivanov" placeholder="Enter lastname">
         </div>
-        <div>
-            <label for="is_man" > male
-                <input id="is_man" name="is_man"  type="checkbox" placeholder="male" />
+        <div class="form-check">
+            <input class="form-check-input" name="is_man" type="checkbox" value="" id="is_man">
+            <label class="form-check-label" for="is_man">
+                Male
             </label>
         </div>
-        <button type="submit">Зарегистрироваться</button>
+        <button class="btn badge-primary" type="submit">Register</button>
     </form>
-    <a href="/">Главная</a>
+</div>
 </div>
 </body>
 </html>
