@@ -11,25 +11,28 @@
 
 <body>
 <div>
-    <form:form method="POST" action="/auth/registration" modelAttribute="userForm">
+    <form method="POST" action="/auth/registration" >
         <h2>Регистрация</h2>
         <div>
-            <form:input type="text" path="email" placeholder="email"
-                        autofocus="true"></form:input>
-            <form:errors path="email"></form:errors>
-                ${usernameError}
+            <input name="email" type="text"   placeholder="email"
+                        autofocus="true" value="dsa" />
         </div>
         <div>
-            <form:input type="password" path="password" placeholder="Password"></form:input>
+            <input name="password"  type="password" value="3123212" placeholder="password" />
         </div>
-<%--        <div>--%>
-<%--            <form:input type="password" path="passwordConfirm"--%>
-<%--                        placeholder="Confirm your password"></form:input>--%>
-<%--            <form:errors path="password"></form:errors>--%>
-<%--                ${passwordError}--%>
-<%--        </div>--%>
+        <div>
+            <input name="firstname"  type="text" value="ivan" placeholder="firstname" />
+        </div>
+        <div>
+            <input name="lastname"  type="text"  value="ivanov" placeholder="lastname" />
+        </div>
+        <div>
+            <label for="is_man" > male
+                <input id="is_man" name="is_man"  type="checkbox" placeholder="male" />
+            </label>
+        </div>
         <button type="submit">Зарегистрироваться</button>
-    </form:form>
+    </form>
     <a href="/">Главная</a>
 </div>
 </body>

@@ -65,7 +65,7 @@ public class UserService implements UserDetailsService, IUserService {
         if (userFromDB.isPresent()) {
             return false;
         }
-
+        user.setIsActive(true);
         user.setRole(Role.USER.toString());
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         userRepository.save(user);
