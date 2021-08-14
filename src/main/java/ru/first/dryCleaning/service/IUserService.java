@@ -15,7 +15,4 @@ public interface IUserService {
 
     public boolean deleteUser(Long userId);
 
-    public List<User> usergtList(Long idMin);
-
-
 }

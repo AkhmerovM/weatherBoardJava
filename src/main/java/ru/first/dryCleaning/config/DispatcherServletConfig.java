@@ -60,4 +60,6 @@ public class DispatcherServletConfig implements WebMvcConfigurer {
                 .addResourceHandler("/static/**")
                                    .addResourceLocations("static/");
     }
+
+
 }

@@ -18,11 +18,11 @@ import java.util.Optional;
 
 @Transactional
 @Service("userService")
-public class UserService implements UserDetailsService, IUserService {
+public class UserServiceImpl implements UserDetailsService, IUserService {
     private final UserRepository userRepository;
 
     @Autowired
-    public UserService(UserRepository userRepository) {
+    public UserServiceImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
@@ -79,10 +79,5 @@ public class UserService implements UserDetailsService, IUserService {
             return true;
         }
         return false;
-    }
-
-    @Override
-    public List<User> usergtList(Long idMin) {
-        return null;
     }
 }
