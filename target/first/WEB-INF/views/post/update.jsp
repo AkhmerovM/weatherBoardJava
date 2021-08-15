@@ -1,13 +1,12 @@
 <html lang="en">
 <head>
-    <link rel="stylesheet" type='text/css' href="/static/css/bootstrap.min.css">
-    <link rel="stylesheet" type='text/css' href="/static/css/bootstrap-grid.min.css">
+    <%@ include file="/WEB-INF/views/resources/header.jsp" %>
     <meta charset="UTF-8">
     <title>Posts</title>
 </head>
 <body>
 <h1>Update: </h1>
-<form method="post" action="'/posts/update/' + ${post.id}">
+<form method="post" action="/posts/update/${post.id}">
 
 <div class="form-group">
         <label for="text">Text</label>

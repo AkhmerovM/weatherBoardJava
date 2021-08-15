@@ -3,8 +3,7 @@
 <head>
     <title>Posts</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type='text/css' href="/static/css/bootstrap.min.css">
-    <link rel="stylesheet" type='text/css' href="/static/css/bootstrap-grid.min.css">
+    <%@ include file="/WEB-INF/views/resources/header.jsp" %>
 </head>
 <body>
 
@@ -15,8 +14,8 @@
             <b>${post.id}</b>
             <i>${post.text}</i>
             <c:if test="${IS_LOGGED == true}">
-            <a href="/posts/update/${post.id}" role="button" class="btn btn-warning" >Редактировать</a>
-                <a href="/posts/remove/${post.id}" role="button" class="btn btn-danger" >Удалить</a>
+            <a href="/posts/update/${post.id}" role="button" class="btn btn-warning" >Edit</a>
+                <a href="/posts/remove/${post.id}" role="button" class="btn btn-danger" >Remove</a>
             </c:if>
         </div>
 

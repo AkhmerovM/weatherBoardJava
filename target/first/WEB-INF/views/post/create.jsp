@@ -1,7 +1,6 @@
 <html lang="en">
 <head>
-    <link rel="stylesheet" type='text/css' href="/static/css/bootstrap.min.css">
-    <link rel="stylesheet" type='text/css' href="/static/css/bootstrap-grid.min.css">
+    <%@ include file="/WEB-INF/views/resources/header.jsp" %>
     <meta charset="UTF-8">
     <title>Posts</title>
 </head>
@@ -14,6 +13,6 @@
         </div>
     <input class="btn btn-primary" role="button" type="submit" />
 </form>
-<a href="/posts" role="button" class="btn btn-primary" >Посты</a>
+<a href="/posts" role="button" class="btn btn-primary" >Posts</a>
 </body>
 </html>
