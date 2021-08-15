@@ -8,8 +8,12 @@
 <h1>Create: </h1>
 <form method="post" action="/posts/create">
         <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title"  name="title" placeholder="Enter title">
+        </div>
+        <div class="form-group">
             <label for="text">Text</label>
-            <input type="text" class="form-control" id="text"  name="text" placeholder="Enter text">
+            <textarea class="form-control" id="text"  name="text" placeholder="Enter text"> </textarea>
         </div>
     <input class="btn btn-primary" role="button" type="submit" />
 </form>

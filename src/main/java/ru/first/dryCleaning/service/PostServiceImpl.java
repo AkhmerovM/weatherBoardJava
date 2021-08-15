@@ -14,10 +14,10 @@ public class PostServiceImpl implements IPostService {
     @Autowired
     private IUserService userService;
     @Override
-    public void addPost(String text) {
+    public void addPost(String title, String text) {
         Long userId = userService.getAuthUserId();
         if (userId != null) {
-            postRepository.save(new Post(userId, text));
+            postRepository.save(new Post(userId, title, text));
         }
     }
 

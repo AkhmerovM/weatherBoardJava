@@ -8,6 +8,7 @@
 <body>
 <h2>Main Page</h2>
 <a href="/posts" role="button" class="btn btn-primary">Posts</a>
+<a href="/login" role="button" class="btn btn-dark">Login</a>
 <a  role="button" href="/auth/registration" class="btn btn-info">Registration</a>
 </body>
 </html>

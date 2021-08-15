@@ -5,6 +5,7 @@ import org.springframework.web.servlet.FrameworkServlet;
 
 import javax.persistence.*;
 import javax.transaction.Transactional;
+import java.util.Date;
 
 @Entity
 @Table(name = "post")
@@ -19,12 +20,20 @@ public class Post {
     @Column(name = "author_id")
     private Long author_id;
 
+    @Column(name = "title")
+    private String title;
+
     @Column(name = "text")
     private String text;
 
-    public Post(Long author_id, String text) {
+    @Column(name = "creation_date")
+    private Date creation_date;
+
+    public Post(Long author_id, String title, String text) {
         this.author_id = author_id;
+        this.title = title;
         this.text = text;
+        this.creation_date = new Date();
     }
 
     public Post() {

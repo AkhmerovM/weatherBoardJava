@@ -13,6 +13,8 @@ public class PostMapper implements RowMapper<Post> {
         Post post = new Post();
         post.setId(resultSet.getLong("id"));
         post.setAuthor_id(resultSet.getLong("author_id"));
+        post.setTitle(resultSet.getString("title"));
+        post.setCreation_date(resultSet.getDate("creation_date"));
         post.setText(resultSet.getString("text"));
         return post;
     }

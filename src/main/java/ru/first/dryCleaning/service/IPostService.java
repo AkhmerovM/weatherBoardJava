@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public interface IPostService {
 
-    public void addPost(String text);
+    public void addPost(String title, String text);
     public void updatePost(Long id, String text);
     public void removePost(Long id);
     public Post getPostById(Long id);

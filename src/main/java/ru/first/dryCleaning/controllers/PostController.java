@@ -24,9 +24,17 @@ public class PostController {
         return "/post/create";
     }
     @PostMapping("/create")
-    public String createPost(String text) {
-        postService.addPost(text);
+    public String createPost(String title, String text) {
+        postService.addPost(title, text);
         return "redirect:/posts";
+    }
+    @RequestMapping("/{id}")
+    public String index(@PathVariable(value="id") String id, Model model) {
+        Post post = postService.getPostById(Long.parseLong(id));
+        if (post != null) {
+            model.addAttribute("post", post);
+        }
+        return "post/index";
     }
     @RequestMapping("/update/{id}")
     public String update(@PathVariable(value="id") String id, Model model) {
