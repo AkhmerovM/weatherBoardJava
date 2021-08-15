@@ -1,3 +1,4 @@
+<%@ page import="java.util.Enumeration" %>
 <html>
 <head>
     <%@ include file="/WEB-INF/views/resources/header.jsp" %>
