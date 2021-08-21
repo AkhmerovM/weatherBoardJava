@@ -2,11 +2,10 @@
 <html>
 <head>
     <title>Posts</title>
-    <meta charset="UTF-8">
     <%@ include file="/WEB-INF/views/resources/header.jsp" %>
 </head>
 <body>
-
+<div class="container">
 <h1>Posts: </h1>
 <div style="margin-bottom: 50px" >
     <c:forEach items="${posts}" var="post">
@@ -14,7 +13,7 @@
             <b>${post.id}</b>
             <u>${post.title}</u>
             <i>${post.text}</i>
-            <a href="/posts/${post.id}" role="button" class="btn btn-success" >Show</a>
+            <a href="/posts/${post.id}" role="button" class="btn btn-success" >СОСИska</a>
             <c:if test="${IS_LOGGED == true}">
                 <a href="/posts/update/${post.id}" role="button" class="btn btn-warning" >Edit</a>
                 <a href="/posts/remove/${post.id}" role="button" class="btn btn-danger" >Remove</a>
@@ -25,9 +24,10 @@
 </div>
 
 <c:if test="${IS_LOGGED == true}">
-    <a href="/posts/create" role="button" class="btn btn-secondary" >Create</a>
+    <a href="/posts/create" role="button" class="btn btn-success" >Create</a>
 </c:if>
 <a href="/" role="button" class="btn btn-primary" >Back</a>
 
+</div>
 </body>
 </html>

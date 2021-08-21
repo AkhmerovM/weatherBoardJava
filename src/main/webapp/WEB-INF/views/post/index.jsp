@@ -16,7 +16,7 @@
         </div>
 </div>
 
-    <a href="/posts" role="button" class="btn btn-secondary" >Back</a>
+    <a href="/posts" role="button" class="btn btn-success" >Back</a>
 
 </body>
 </html>

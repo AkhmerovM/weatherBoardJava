@@ -14,20 +14,24 @@ public class SessionCheckFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain fc) throws IOException, ServletException {
         HttpServletRequest req = (HttpServletRequest) request;
-        HttpSession session = req.getSession(false);
+        HttpServletResponse res = (HttpServletResponse) response;
+        HttpSession session = req.getSession(true);
+        if (session != null) {
+            Object attribute = session.getAttribute("SPRING_SECURITY_CONTEXT");
+            if (attribute != null) {
+                SecurityContextImpl sci = (SecurityContextImpl) attribute;
+                session.setAttribute("IS_LOGGED", false);
 
-        SecurityContextImpl sci = (SecurityContextImpl) session.getAttribute("SPRING_SECURITY_CONTEXT");
-        session.setAttribute("IS_LOGGED", false);
-
-        if (sci != null) {
-            UserDetails cud = (UserDetails) sci.getAuthentication().getPrincipal();
-            if (cud != null) {
-                session.setAttribute("IS_LOGGED", true);
+                UserDetails cud = (UserDetails) sci.getAuthentication().getPrincipal();
+                if (cud != null) {
+                    session.setAttribute("IS_LOGGED", true);
+                }
             }
+        }else {
+            res.sendRedirect("/posts");
         }
         fc.doFilter(request, response);
     }
-
     @Override
     public void destroy() {
     }
