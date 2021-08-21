@@ -13,7 +13,7 @@
             <b>${post.id}</b>
             <u>${post.title}</u>
             <i>${post.text}</i>
-            <a href="/posts/${post.id}" role="button" class="btn btn-success" >СОСИska</a>
+            <a href="/posts/${post.id}" role="button" class="btn btn-success" >Read</a>
             <c:if test="${IS_LOGGED == true}">
                 <a href="/posts/update/${post.id}" role="button" class="btn btn-warning" >Edit</a>
                 <a href="/posts/remove/${post.id}" role="button" class="btn btn-danger" >Remove</a>
