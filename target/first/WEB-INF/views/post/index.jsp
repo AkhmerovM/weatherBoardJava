@@ -3,7 +3,7 @@
 <head>
     <title>Posts</title>
     <meta charset="UTF-8">
-    <%@ include file="/WEB-INF/views/resources/header.jsp" %>
+    <%@ include file="/WEB-INF/views/resources/imports.jsp" %>
 </head>
 <body>
 

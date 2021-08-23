@@ -1,6 +1,6 @@
 <html lang="en">
 <head>
-    <%@ include file="/WEB-INF/views/resources/header.jsp" %>
+    <%@ include file="/WEB-INF/views/resources/imports.jsp" %>
     <meta charset="UTF-8">
     <title>Posts</title>
 </head>

@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Posts</title>
-    <%@ include file="/WEB-INF/views/resources/header.jsp" %>
+    <%@ include file="/WEB-INF/views/resources/imports.jsp" %>
 </head>
 <body>
 <div class="container">

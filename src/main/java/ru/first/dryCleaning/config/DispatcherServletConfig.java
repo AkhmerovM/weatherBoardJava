@@ -28,7 +28,7 @@ public class DispatcherServletConfig implements WebMvcConfigurer {
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
         resolver.setPrefix("/WEB-INF/views/");
         resolver.setSuffix(".jsp");
-        resolver.setContentType("text/html; charset=utf-8");
+//        resolver.setContentType("text/html; charset=utf-8");
         resolver.setViewClass(JstlView.class);
 
         return resolver;

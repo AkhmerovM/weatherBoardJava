@@ -8,7 +8,7 @@ import ru.first.dryCleaning.model.Post;
 import ru.first.dryCleaning.service.IPostService;
 
 import java.util.List;
-@RequestMapping(value = "/posts",  produces = "text/html;charset=UTF-8")
+@RequestMapping(value = "/posts")
 @Controller
 public class PostController {
     @Autowired
