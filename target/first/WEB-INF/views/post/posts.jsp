@@ -6,7 +6,7 @@
 </head>
 <body>
 <div class="container">
-<h1>Posts: </h1>
+<h1>Посты: </h1>
 <div style="margin-bottom: 50px" >
     <c:forEach items="${posts}" var="post">
         <div style="margin-bottom: 10px">

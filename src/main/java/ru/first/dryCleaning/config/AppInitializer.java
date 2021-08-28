@@ -22,8 +22,8 @@ public class AppInitializer extends AbstractAnnotationConfigDispatcherServletIni
     }
     @Override
     protected Filter[] getServletFilters() {
-//        CharacterEncodingFilter filter = new CharacterEncodingFilter();
-//        filter.setEncoding("UTF-8");
+        CharacterEncodingFilter filter = new CharacterEncodingFilter();
+        filter.setEncoding("UTF-8");
         SessionCheckFilter filter2 = new SessionCheckFilter();
         return new Filter[] { filter2 };
     }

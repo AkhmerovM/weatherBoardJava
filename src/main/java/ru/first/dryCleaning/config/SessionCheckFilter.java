@@ -16,6 +16,8 @@ public class SessionCheckFilter implements Filter {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse res = (HttpServletResponse) response;
         HttpSession session = req.getSession(true);
+//        req.setCharacterEncoding("UTF-8");
+//        res.setCharacterEncoding("UTF-8");
         if (session != null) {
             Object attribute = session.getAttribute("SPRING_SECURITY_CONTEXT");
             if (attribute != null) {
