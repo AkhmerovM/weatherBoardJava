@@ -87,5 +87,6 @@ padding-bottom:60px;
             </div>
     </div>
 </div>
+<jsp:include page="/WEB-INF/views/resources/footer.jsp"  />
 </body>
 </html>
