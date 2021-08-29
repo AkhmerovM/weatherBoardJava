@@ -14,7 +14,7 @@
                 window.clearInterval(intervalId);
                 callback.call(this);
             }
-        }, 500);
+        }, 100);
     }
 
     function setVisible(selector, visible) {
