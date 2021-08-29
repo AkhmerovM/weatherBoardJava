@@ -1,11 +1,11 @@
 <html>
 <head>
-    <%@ include file="/WEB-INF/views/resources/imports.jsp" %>
-    <meta charset="utf-8">
+    <jsp:include page="/WEB-INF/views/resources/imports.jsp"  />
+    <meta charset="UTF-8">
     <title>Main</title>
 </head>
 <body class="stretched no-transition main_page [page_preview]">
-<%@ include file="/WEB-INF/views/resources/header.jsp" %>
+<jsp:include page="/WEB-INF/views/resources/header.jsp" />
 <div id="page-content" style="visibility: hidden; opacity: 0">
     <!-- Document Wrapper
 

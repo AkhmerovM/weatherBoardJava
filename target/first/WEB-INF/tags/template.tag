@@ -7,6 +7,7 @@
     <%@ include file="/WEB-INF/views/resources/imports.jsp" %>
     <title><jsp:invoke fragment="title"/></title>
     <meta name="description" content="<jsp:invoke fragment="description"/>">
+    <meta charset="UTF-8">
 </head>
 <body class="stretched no-transition main_page [page_preview]">
 <%@ include file="/WEB-INF/views/resources/header.jsp" %>

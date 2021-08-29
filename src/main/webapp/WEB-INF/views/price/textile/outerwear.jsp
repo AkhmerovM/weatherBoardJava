@@ -1,4 +1,3 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib tagdir="/WEB-INF/tags" prefix="t"%>
 <t:template >
 	 <jsp:attribute name="title">Химчистка верхней одежды</jsp:attribute>

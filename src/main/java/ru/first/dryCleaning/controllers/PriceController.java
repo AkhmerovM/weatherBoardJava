@@ -38,6 +38,10 @@ public class PriceController {
     public String car() {
         return "price/car/car";
     }
+    @GetMapping("/price/rug")
+    public String rug() {
+        return "price/rug/rug";
+    }
     @GetMapping("/price/blanket")
     public String blanket() {
         return "price/blanket/blanket";
