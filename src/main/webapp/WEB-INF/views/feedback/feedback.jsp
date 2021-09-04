@@ -28,19 +28,19 @@ padding-bottom:60px;
 <div class="feedback" style="display: flex; justify-content: center">
     <div class="col-md-10 col-lg-8 col-xl-6" >
 
-        <form class="feedback-form">
+        <form class="feedback-form" action="/feedback" method="post">
             <div class="mb-3">
                 <label for="exampleInputName" class="form-label">Ваше имя</label>
-                <input class="form-control" placeholder="Имя" id="exampleInputName" aria-describedby="emailHelp">
+                <input class="form-control" required name="name" placeholder="Имя" id="exampleInputName" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail" class="form-label">Почта mail</label>
-                <input type="email" placeholder="почта" class="form-control" id="exampleInputEmail"
+                <input type="email" required name="email" placeholder="почта" class="form-control" id="exampleInputEmail"
                        aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Напишите вопрос/отзыв/пожелание</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea class="form-control" required name="text" id="exampleFormControlTextarea1" maxlength="200" rows="3"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Отправить</button>
         </form>

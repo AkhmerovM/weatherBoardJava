@@ -1,9 +1,9 @@
 <div class="section header-map nopadding" style="
-
+background-color: rgba(0, 0, 0, 0);
 margin-top:unset;
 margin-bottom:unset;
 ">
-    <div class="" style="background-color: rgba(0, 0, 0, 0);
+    <div class="" style="
 padding-top:60px;
 padding-bottom:unset;
     ">
@@ -184,6 +184,4 @@ padding-bottom:unset;
             </div>
         </div>
     </div>
-
-    <script type="module" src="/dist/bundle.js"></script>
 </footer>
