@@ -1,7 +1,7 @@
 <meta charset="UTF-8">
 
 <!-- include css -->
-<link href="/static/build/main.css" rel="stylesheet">
+<link  rel="stylesheet" href="/static/build/main.css">
 
 <link rel="stylesheet" href="/static/css/base.css">
 <link rel="stylesheet" href="/static/css/bootstrap.css">

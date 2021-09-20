@@ -40,7 +40,7 @@ padding-bottom:60px;
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Напишите вопрос/отзыв/пожелание</label>
-                <textarea class="form-control" required name="text" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea class="form-control" required name="text" id="exampleFormControlTextarea1" maxlength="200" rows="3"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Отправить</button>
         </form>

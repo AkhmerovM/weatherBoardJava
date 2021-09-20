@@ -53,6 +53,12 @@ body {
 .jc-c {
     justify-content: center;
 }
+.jc-fe {
+    justify-content: flex-end;
+}
+.jc-fs {
+    justify-content: flex-start;
+}
 .ta-c {
     text-align: center;
 }
@@ -384,5 +390,9 @@ a:hover {
     .feedback {
         padding: 10px 10px 0;
     }
+}
+.body-container {
+    padding-bottom: 60px;
+    padding-top: 60px;
 }
 

@@ -20,11 +20,10 @@ public class FeedbackController {
     @PostMapping("/feedback")
     public String feedbackPost(String email, String name, String text) {
         feedbackService.addFeedback(email, name, text);
-        return "feedback/successful";
+        return "redirect:/feedback/successful";
     }
-    @GetMapping("/feedbacks")
-    public String feedbacks(Model model) {
-        model.addAttribute("feedbacks", feedbackService.list());
-        return "feedback/list";
+    @GetMapping("/feedback/successful")
+    public String successful() {
+        return "feedback/successful";
     }
 }

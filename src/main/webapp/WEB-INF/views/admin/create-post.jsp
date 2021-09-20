@@ -8,7 +8,7 @@
 <body>
 <div class="container">
 <h1>Create: </h1>
-<form method="post" action="/posts/create">
+<form method="post" action="/admin/posts/create">
         <div class="form-group">
             <label for="title">Title</label>
             <input required type="text" class="form-control" id="title"  name="title" placeholder="Enter title">

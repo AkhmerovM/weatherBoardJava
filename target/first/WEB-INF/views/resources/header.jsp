@@ -67,7 +67,15 @@
 					<a class="nav-link" href="/contacts">Приемные пункты</a>
 				</li>
 				<li class="nav-item">
+					<a class="nav-link" href="/posts">Статьи</a>
+				</li>
+				<li class="nav-item">
 					<a class="nav-link" href="/feedback">Обратная связь</a>
+				</li>
+			</ul>
+			<ul class="navbar-nav f1 jc-fe">
+				<li class="nav-item">
+					<a class="nav-link btn btn-outline-light" href="/admin/cabinet">Вход</a>
 				</li>
 			</ul>
 		</div>
