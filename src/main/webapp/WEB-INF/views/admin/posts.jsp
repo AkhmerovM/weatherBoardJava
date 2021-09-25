@@ -2,7 +2,8 @@
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <html>
 <head>
-    <title>Posts</title>
+    <title>Фабрика химчистки в Новокузнецке</title>
+    <meta name="description" content="Химчистка в Новокузнецке. Более 30 лет на рынке услуг. Работы выполняются квалифицированным персоналом по новейшим технологиям. У нас более 3000 благодарных клиентов. Постоянным заказчикам и пенсионерам предоставляем скидки до 10%. Доверяйте нам заботу о ваших вещах!">
     <%@ include file="/WEB-INF/views/resources/imports.jsp" %>
 </head>
 <body>
@@ -23,9 +24,9 @@
                     <li><i class="icon-calendar3"></i> <fmt:formatDate value="${post.creation_date}" pattern="yyyy-MM-dd" /></li>
                 </ul>
             </div>
-            <c:if test="${true}">
-                <a href="/admin/posts/update/${post.id}" role="button" class="btn btn-warning" >Edit</a>
-                <a href="/admin/posts/remove/${post.id}" role="button" class="btn btn-danger" >Remove</a>
+            <c:if test="${IS_LOGGED}">
+                <a href="/admin/posts/update/${post.id}" role="button" class="btn btn-warning" >Редактировать</a>
+                <a href="/admin/posts/remove/${post.id}" role="button" class="btn btn-danger" >Удалить</a>
             </c:if>
         </div>
     </c:forEach>

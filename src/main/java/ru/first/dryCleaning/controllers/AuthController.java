@@ -25,13 +25,13 @@ public class AuthController {
     public String addUser(@ModelAttribute("userForm") User userForm, BindingResult bindingResult, Model model) {
 
         if (bindingResult.hasErrors()) {
-            return "registration";
+            return "/auth/register";
         }
         if (!userService.saveUser(userForm)){
             model.addAttribute("usernameError", "Пользователь с таким именем уже существует");
-            return "registration";
+            return "/auth/register";
         }
 
-        return "redirect:/";
+        return "redirect:/login";
     }
 }

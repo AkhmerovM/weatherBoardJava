@@ -19,7 +19,7 @@ public class PostController {
         model.addAttribute("posts",  posts);
         return "/post/posts";
     }
-    @RequestMapping("/{id}")
+    @GetMapping("/{id}")
     public String index(@PathVariable(value="id") String id, Model model) {
         Post post = postService.getPostById(Long.parseLong(id));
         if (post != null) {

@@ -1,3 +1,4 @@
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <%@ include file="/WEB-INF/views/resources/loader.jsp" %>
 <script>
     window.isLoaded = false;
@@ -74,9 +75,24 @@
 				</li>
 			</ul>
 			<ul class="navbar-nav f1 jc-fe">
-				<li class="nav-item">
-					<a class="nav-link btn btn-outline-light" href="/admin/cabinet">Вход</a>
-				</li>
+				<c:choose>
+					<c:when test="${IS_LOGGED}">
+						<li class="nav-item ml-1">
+							<a class="nav-link btn btn-outline-light" href="/profile/cabinet">Личный кабинет</a>
+						</li>
+						<li class="nav-item ml-1">
+							<a class="nav-link btn btn-outline-light" href="/logout">Выйти</a>
+						</li>
+					</c:when>
+					<c:otherwise>
+						<li class="nav-item">
+							<a class="nav-link btn btn-outline-light" href="/profile/cabinet">Вход</a>
+						</li>
+<%--						<li class="nav-item ml-1">--%>
+<%--							<a class="nav-link btn btn-outline-light" href="/auth/registration">Регистрация</a>--%>
+<%--						</li>--%>
+					</c:otherwise>
+				</c:choose>
 			</ul>
 		</div>
 	</div>

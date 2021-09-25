@@ -1,12 +1,17 @@
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <html>
 <head>
-    <link rel="stylesheet" type='text/css' href="/static/css/bootstrap.min.css">
-    <link rel="stylesheet" type='text/css' href="/static/css/bootstrap-grid.min.css">
+    <%@ include file="/WEB-INF/views/resources/imports.jsp" %>
     <meta charset="utf-8">
     <title>Registration</title>
 </head>
 
 <body>
+<c:if test="${!usernameError.blank}" >
+    <div class="alert alert-danger" role="alert">
+        ${usernameError}
+    </div>
+</c:if>
 <div class="d-flex justify-content-center">
 <div class="col-12 col-md-6">
     <a href="/" class="btn badge-info" >Main Page</a>
