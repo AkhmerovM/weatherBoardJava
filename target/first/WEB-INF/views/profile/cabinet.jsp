@@ -12,11 +12,23 @@
 		<a href="/admin/cabinet" class="btn btn-primary">Панель администратора</a>
 	</div>
 	<div class="container">
-		<h2>Профиль</h2>
-		<h4>${user.email}</h4>
-		<h4>${user.firstname}</h4>
-		<h4>${user.lastname}</h4>
-		<h4>${user.role}</h4>
+		<div class="d-flex jc-sp">
+			<div>
+				<h2>Профиль</h2>
+				<p>${user.email}</p>
+				<p>${user.firstname}</p>
+				<p>${user.lastname}</p>
+				<p>${user.role}</p>
+			</div>
+			<div>
+				<h3>Мои статьи:</h3>
+				<div>
+					<c:forEach var="post" items="${user.posts}">
+						<p>${post.title}</p>
+					</c:forEach>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 </body>

@@ -29,6 +29,10 @@ public class Post {
     @Column(name = "creation_date")
     private Date creation_date;
 
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name = "author_id", insertable = false, updatable = false)
+    private User author;
+
     public Post(Long author_id, String title, String text) {
         this.author_id = author_id;
         this.title = title;

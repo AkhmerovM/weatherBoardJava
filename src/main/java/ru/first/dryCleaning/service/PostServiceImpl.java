@@ -3,6 +3,7 @@ package ru.first.dryCleaning.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.first.dryCleaning.model.Post;
+import ru.first.dryCleaning.model.User;
 import ru.first.dryCleaning.repository.PostRepository;
 
 import java.util.List;
@@ -16,9 +17,9 @@ public class PostServiceImpl implements IPostService {
     @Override
     public void addPost(String title, String text) {
         Long userId = userService.getAuthUserId();
-//        if (userId != null) {
-            postRepository.save(new Post(3L, title, text));
-//        }
+        if (userId != null) {
+            postRepository.save(new Post(userId, title, text));
+        }
     }
 
     @Override
@@ -48,8 +49,5 @@ public class PostServiceImpl implements IPostService {
     @Override
     public List<Post> list() {
         return postRepository.findAll();
-    }
-    public Long getRandomValue(int min, int max) {
-        return Math.round((Math.random() * (max - min)) + min);
     }
 }

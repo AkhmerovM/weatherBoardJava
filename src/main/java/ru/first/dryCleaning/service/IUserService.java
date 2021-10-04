@@ -1,5 +1,6 @@
 package ru.first.dryCleaning.service;
 
+import ru.first.dryCleaning.model.Post;
 import ru.first.dryCleaning.model.User;
 
 import java.util.List;
@@ -14,5 +15,7 @@ public interface IUserService {
     public boolean saveUser(User user) ;
 
     public boolean deleteUser(Long userId);
+
+    List<Post> getPosts(Long userId);
 
 }

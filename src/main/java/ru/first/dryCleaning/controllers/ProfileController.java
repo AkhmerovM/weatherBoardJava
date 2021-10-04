@@ -5,8 +5,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import ru.first.dryCleaning.model.Post;
 import ru.first.dryCleaning.model.User;
 import ru.first.dryCleaning.service.IUserService;
+
+import java.util.List;
 
 @Controller
 @RequestMapping(value = "/profile")

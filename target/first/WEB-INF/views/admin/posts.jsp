@@ -25,8 +25,8 @@
                 </ul>
             </div>
             <c:if test="${IS_LOGGED}">
-                <a href="/admin/posts/update/${post.id}" role="button" class="btn btn-warning" >Edit</a>
-                <a href="/admin/posts/remove/${post.id}" role="button" class="btn btn-danger" >Remove</a>
+                <a href="/admin/posts/update/${post.id}" role="button" class="btn btn-warning" >Редактировать</a>
+                <a href="/admin/posts/remove/${post.id}" role="button" class="btn btn-danger" >Удалить</a>
             </c:if>
         </div>
     </c:forEach>

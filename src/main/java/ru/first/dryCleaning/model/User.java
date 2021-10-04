@@ -3,6 +3,7 @@ package ru.first.dryCleaning.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -33,4 +34,7 @@ public class User {
 
     @Column(name = "is_active")
     private Boolean isActive;
+
+    @OneToMany(mappedBy = "author")
+    private List<Post> posts;
 }

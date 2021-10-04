@@ -8,6 +8,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import ru.first.dryCleaning.constants.Role;
+import ru.first.dryCleaning.model.Post;
 import ru.first.dryCleaning.model.User;
 import ru.first.dryCleaning.repository.UserRepository;
 
@@ -79,5 +80,12 @@ public class UserServiceImpl implements UserDetailsService, IUserService {
             return true;
         }
         return false;
+    }
+    public List<Post> getPosts(Long userId) {
+        User user = findUserById(userId);
+        if (user != null) {
+            return user.getPosts();
+        }
+        return null;
     }
 }
