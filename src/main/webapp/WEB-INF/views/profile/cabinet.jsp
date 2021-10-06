@@ -30,10 +30,24 @@
 						</label>
 					</div>
 					<div class="form-group">
-						<label for="admin">Администратор</label><input type="radio" id="admin" checked="${isAdmin}" name="role" value="ADMIN">
+						<c:choose>
+							<c:when test="${isAdmin}">
+								<label for="admin">Администратор</label><input type="radio" id="admin" checked name="role" value="ADMIN">
+							</c:when>
+							<c:otherwise>
+								<label for="admin">Администратор</label><input type="radio" id="admin" name="role" value="ADMIN">
+							</c:otherwise>
+						</c:choose>
 					</div>
 					<div class="form-group">
-						<label for="user">Пользователь</label><input type="radio" id="user" checked="${isUser}" name="role" value="USER">
+						<c:choose>
+							<c:when test="${isUser}">
+								<label for="user">Пользователь</label><input type="radio" checked id="user" name="role" value="USER">
+							</c:when>
+							<c:otherwise>
+								<label for="user">Пользователь</label><input type="radio"  id="user" name="role" value="USER">
+							</c:otherwise>
+						</c:choose>
 					</div>
 					<input type="submit" class="btn btn-primary" value="Сохранить"/>
 				</form>
@@ -41,9 +55,9 @@
 			<div>
 				<h3>Мои статьи:</h3>
 				<div>
-																																			<%--					<c:forEach var="post" items="${user.posts}">--%>
-																																			<%--						<p>${post.title}</p>--%>
-																																			<%--					</c:forEach>--%>
+					<c:forEach var="post" items="${user.posts}">
+						<p>${post.title}</p>
+					</c:forEach>
 				</div>
 			</div>
 		</div>

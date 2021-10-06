@@ -35,6 +35,6 @@ public class User {
     @Column(name = "is_active")
     private Boolean isActive;
 
-//    @OneToMany(mappedBy = "author")
-//    private List<Post> posts;
+    @OneToMany(mappedBy = "author")
+    private List<Post> posts;
 }
