@@ -7,7 +7,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import ru.first.dryCleaning.constants.Role;
 import ru.first.dryCleaning.model.Post;
 import ru.first.dryCleaning.model.User;
 import ru.first.dryCleaning.repository.UserRepository;
@@ -34,7 +33,7 @@ public class UserServiceImpl implements UserDetailsService, IUserService {
         User user = userRepository.findByEmail(email).orElseThrow(() -> new UsernameNotFoundException("user not found"));
         return SecurityUser.fromUser(user);
     }
-    public Long getAuthUserId() {
+    public User getAuthUser() {
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String username = "";
         if (principal instanceof UserDetails) {
@@ -43,7 +42,7 @@ public class UserServiceImpl implements UserDetailsService, IUserService {
             username = principal.toString();
         }
         Optional<User> user = userRepository.findByEmail(username);
-        return user.map(User::getId).orElse(null);
+        return user.orElse(null);
     }
 
     @Override
@@ -60,17 +59,21 @@ public class UserServiceImpl implements UserDetailsService, IUserService {
     }
 
     @Override
-    public boolean saveUser(User user) {
+    public boolean createUser(User user) {
         Optional<User> userFromDB = userRepository.findByEmail(user.getEmail());
 
         if (userFromDB.isPresent()) {
             return false;
         }
         user.setIsActive(true);
-        user.setRole(Role.USER.toString());
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         userRepository.save(user);
         return true;
+    }
+
+    @Override
+    public User saveUser(User user) {
+        return userRepository.save(user);
     }
 
     @Override
@@ -84,7 +87,7 @@ public class UserServiceImpl implements UserDetailsService, IUserService {
     public List<Post> getPosts(Long userId) {
         User user = findUserById(userId);
         if (user != null) {
-            return user.getPosts();
+            return Collections.emptyList();
         }
         return null;
     }

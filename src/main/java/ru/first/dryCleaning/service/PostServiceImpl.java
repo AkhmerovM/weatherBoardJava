@@ -16,9 +16,9 @@ public class PostServiceImpl implements IPostService {
     private IUserService userService;
     @Override
     public void addPost(String title, String text) {
-        Long userId = userService.getAuthUserId();
-        if (userId != null) {
-            postRepository.save(new Post(userId, title, text));
+        User user = userService.getAuthUser();
+        if (user != null) {
+            postRepository.save(new Post(user.getId(), title, text));
         }
     }
 

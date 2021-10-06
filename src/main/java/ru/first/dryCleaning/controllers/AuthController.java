@@ -27,7 +27,7 @@ public class AuthController {
         if (bindingResult.hasErrors()) {
             return "/auth/register";
         }
-        if (!userService.saveUser(userForm)){
+        if (!userService.createUser(userForm)){
             model.addAttribute("usernameError", "Пользователь с таким именем уже существует");
             return "/auth/register";
         }
