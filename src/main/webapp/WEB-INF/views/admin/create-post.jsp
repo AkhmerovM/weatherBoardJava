@@ -19,7 +19,7 @@
         </div>
     <input class="btn btn-success" role="button" type="submit" />
 </form>
-<a href="/posts" role="button" class="btn btn-primary" >Назад</a>
+<a href="/admin/posts" role="button" class="btn btn-primary" >Назад</a>
 </div>
 <script>
     $(document).ready(function() {
