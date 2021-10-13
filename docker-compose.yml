@@ -1,0 +1,26 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  db:
+    image: postgres:13
+    container_name: db
+    ports:
+    - 5444:5432
+#    volumes:
+#    - db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: dryCleaning
+      PGDATA: /var/lib/postgresql/data/pgdata
+    restart: always
+  app:
+    build: .
+    image: mywebapp
+    ports:
+      - "8080:8080"
+    restart: always
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/dryCleaning
+    links:
+      - db
+# pg_restore -h localhost -p 5444 -U postgres -d dryCleaning db/dryCleaning

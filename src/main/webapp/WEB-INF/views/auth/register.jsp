@@ -14,32 +14,32 @@
 </c:if>
 <div class="d-flex justify-content-center">
 <div class="col-12 col-md-6">
-    <a href="/" class="btn badge-info" >Main Page</a>
+    <a href="/" class="btn badge-info" >Главная страница</a>
     <form method="POST" action="/auth/registration" >
         <h2>Registration</h2>
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" class="form-control" id="email"  name="email" value="dsadsa@mail.ru" placeholder="Enter email">
+            <input type="email" class="form-control" id="email"  name="email" value="dsadsa@mail.ru" placeholder="Введите email">
         </div>
         <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" id="password"  name="password" value="3123212" placeholder="Enter password">
+            <label for="password">Пароль</label>
+            <input type="password" class="form-control" id="password"  name="password" value="3123212" placeholder="Введите пароль">
         </div>
         <div class="form-group">
-            <label for="firstname">Firstname</label>
-            <input type="text" class="form-control" id="firstname"  name="firstname" value="ivan" placeholder="Enter firstname">
+            <label for="firstname">Имя</label>
+            <input type="text" class="form-control" id="firstname"  name="firstname" value="ivan" placeholder="Введите имя">
         </div>
         <div class="form-group">
-            <label for="lastname">Lastname</label>
-            <input type="text" class="form-control" id="lastname"  name="lastname" value="ivanov" placeholder="Enter lastname">
+            <label for="lastname">Фамилия</label>
+            <input type="text" class="form-control" id="lastname"  name="lastname" value="ivanov" placeholder="Введите фамилию">
         </div>
         <div class="form-check">
-            <input class="form-check-input" name="is_man" type="checkbox" value="" id="is_man">
-            <label class="form-check-label" for="is_man">
-                Male
+            <input type="checkbox" class="form-check-input" id="isMan" name="isMan" value="yes" >
+            <label class="form-check-label" for="isMan">
+                Мужчина
             </label>
         </div>
-        <button class="btn badge-primary" type="submit">Register</button>
+        <button class="btn badge-primary" type="submit">Регистрация</button>
     </form>
 </div>
 </div>
