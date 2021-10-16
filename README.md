@@ -1,10 +1,10 @@
-# dryCleaning site
+# dryCleaning web application
 
 ## Main stack - Spring MVC / Spring Data Jpa
 
-## Install and Usage with the Docker
+### Install and Usage with the Docker
 
-###To create docker images
+#### To create docker images
 
 create mywebapp image
 ```sh
