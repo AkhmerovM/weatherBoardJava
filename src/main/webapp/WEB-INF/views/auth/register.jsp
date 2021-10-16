@@ -19,19 +19,19 @@
         <h2>Registration</h2>
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" class="form-control" id="email"  name="email" value="dsadsa@mail.ru" placeholder="Введите email">
+            <input type="email" class="form-control" id="email"  name="email" value="" placeholder="Введите email">
         </div>
         <div class="form-group">
             <label for="password">Пароль</label>
-            <input type="password" class="form-control" id="password"  name="password" value="3123212" placeholder="Введите пароль">
+            <input type="password" class="form-control" id="password"  name="password" value="" placeholder="Введите пароль">
         </div>
         <div class="form-group">
             <label for="firstname">Имя</label>
-            <input type="text" class="form-control" id="firstname"  name="firstname" value="ivan" placeholder="Введите имя">
+            <input type="text" class="form-control" id="firstname"  name="firstname" value="" placeholder="Введите имя">
         </div>
         <div class="form-group">
             <label for="lastname">Фамилия</label>
-            <input type="text" class="form-control" id="lastname"  name="lastname" value="ivanov" placeholder="Введите фамилию">
+            <input type="text" class="form-control" id="lastname"  name="lastname" value="" placeholder="Введите фамилию">
         </div>
         <div class="form-check">
             <input type="checkbox" class="form-check-input" id="isMan" name="isMan" value="yes" >
