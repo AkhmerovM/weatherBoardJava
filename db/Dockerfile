@@ -1,2 +1,2 @@
 FROM postgres:13
-COPY dryCleaning.backup /docker-entrypoint-initdb.d
+ADD dryCleaning.sql /docker-entrypoint-initdb.d
