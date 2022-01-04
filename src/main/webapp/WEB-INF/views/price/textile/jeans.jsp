@@ -14,7 +14,7 @@
 		</tr>
 		<tr>
 			<td>Джинсы, шт</td>
-			<td>260</td>
+			<td>275</td>
 		</tr>
 	</table>
 </jsp:body>

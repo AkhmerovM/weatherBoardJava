@@ -14,7 +14,7 @@
 		</tr>
 		<tr>
 			<td>Стирка белья, кг</td>
-			<td>54</td>
+			<td>58</td>
 		</tr>
 	</table>
 </jsp:body>
