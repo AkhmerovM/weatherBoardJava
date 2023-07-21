@@ -11,8 +11,8 @@ public class FeedbackServiceImpl implements IFeedbackService {
     @Autowired
     private FeedbackRepository feedbackRepository;
     @Override
-    public void addFeedback(String email, String name, String text) {
-        feedbackRepository.save(new Feedback(email, name, text));
+    public void addFeedback(String email, String name, String text, String date) {
+        feedbackRepository.save(new Feedback(email, name, text, date));
     }
 
     @Override

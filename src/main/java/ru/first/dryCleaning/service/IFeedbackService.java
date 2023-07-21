@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface IFeedbackService {
 
-    public void addFeedback(String email, String name, String text);
+    public void addFeedback(String email, String name, String text, String date);
     public Feedback getFeedbackById(Long id);
     public List<Feedback> list();
 }

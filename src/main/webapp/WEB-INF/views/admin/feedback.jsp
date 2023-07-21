@@ -15,6 +15,7 @@
 		<tr>
 			<th scope="col">#</th>
 			<th scope="col">Имя</th>
+			<th scope="col">Дата создания</th>
 			<th scope="col">Почта</th>
 			<th scope="col">Текст</th>
 		</tr>
@@ -24,6 +25,7 @@
 			<tr>
 				<td>${feedback.id}</td>
 				<td>${feedback.name}</td>
+				<td>${feedback.date}</td>
 				<td>${feedback.email}</td>
 				<td>${feedback.text}</td>
 			</tr>

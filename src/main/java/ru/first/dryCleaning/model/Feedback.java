@@ -17,11 +17,14 @@ public class Feedback {
     private String email;
     @Column(name = "text")
     private String text;
+    @Column(name = "date")
+    private String date;
 
-    public Feedback(String email, String name, String text) {
+    public Feedback(String email, String name, String text, String date) {
         this.email = email;
         this.name = name;
         this.text = text;
+        this.date = date;
     }
 
     public Feedback() {

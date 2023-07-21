@@ -22,7 +22,7 @@ SET row_security = off;
 -- TOC entry 2997 (class 1262 OID 16386)
 -- Name: dryCleaning; Type: DATABASE; Schema: -; Owner: postgres
 --
-
+CREATE DATABASE "dryCleaning";
 
 ALTER DATABASE "dryCleaning" OWNER TO postgres;
 
@@ -64,6 +64,7 @@ SET default_table_access_method = heap;
 CREATE TABLE public.feedback (
     id bigint NOT NULL,
     email text NOT NULL,
+    date text NOT NULL,
     text text NOT NULL,
     name text NOT NULL
 );
@@ -157,8 +158,8 @@ ALTER TABLE public."user" ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
 -- Data for Name: feedback; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.feedback (id, email, text, name) FROM stdin;
-21	asd@mail.ru	Это лучший сайт, который я видел!	Максим
+COPY public.feedback (id, email, date, text, name) FROM stdin;
+21	asd@mail.ru	2022-01-08 04:05:06	 Это лучший сайт, который я видел!	Максим
 \.
 
 
