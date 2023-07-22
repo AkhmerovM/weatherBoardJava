@@ -1,7 +1,6 @@
 package ru.first.dryCleaning.model;
 
 import lombok.Data;
-import org.springframework.web.servlet.FrameworkServlet;
 
 import javax.persistence.*;
 import javax.transaction.Transactional;

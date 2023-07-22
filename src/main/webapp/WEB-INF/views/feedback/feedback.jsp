@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Фабрика химчистки в Новокузнецке</title>
     <meta name="description" content="Химчистка в Новокузнецке. Более 30 лет на рынке услуг. Работы выполняются квалифицированным персоналом по новейшим технологиям. У нас более 3000 благодарных клиентов. Постоянным заказчикам и пенсионерам предоставляем скидки до 10%. Доверяйте нам заботу о ваших вещах!">
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LeHxEEnAAAAADt_8AsF0dhjwxC3yRwvISnJIXth"></script>
 </head>
 <body class="stretched no-transition main_page [page_preview]">
 <jsp:include page="/WEB-INF/views/resources/header.jsp" />
@@ -58,5 +59,18 @@ padding-bottom:60px;
 </div>
 <jsp:include page="/WEB-INF/views/resources/footer.jsp"  />
 </body>
+
+<script>
+    function onClick(e) {
+        e.preventDefault();
+        grecaptcha.enterprise.ready(async () => {
+            const token = await grecaptcha.enterprise.execute('6LeHxEEnAAAAADt_8AsF0dhjwxC3yRwvISnJIXth', {action: 'LOGIN'});
+            // IMPORTANT: The 'token' that results from execute is an encrypted response sent by
+            // reCAPTCHA Enterprise to the end user's browser.
+            // This token must be validated by creating an assessment.
+            // See https://cloud.google.com/recaptcha-enterprise/docs/create-assessment
+        });
+    }
+</script>
 </html>
 
