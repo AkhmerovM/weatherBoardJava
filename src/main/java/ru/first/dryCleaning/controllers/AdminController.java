@@ -11,6 +11,9 @@ import ru.first.dryCleaning.model.Post;
 import ru.first.dryCleaning.service.FeedbackServiceImpl;
 import ru.first.dryCleaning.service.PostServiceImpl;
 
+import java.util.Collections;
+import java.util.List;
+
 @Controller
 @RequestMapping("admin")
 public class AdminController {
@@ -24,7 +27,10 @@ public class AdminController {
     }
     @GetMapping("/feedback")
     public String feedbacks(Model model) {
-        model.addAttribute("feedbacks", feedbackService.list());
+        List<?> list = feedbackService.list();
+        List<?> shallowCopy = list.subList(0, list.size());
+        Collections.reverse(shallowCopy);
+        model.addAttribute("feedbacks", shallowCopy);
         return "/admin/feedback";
     }
     @GetMapping("/posts")
