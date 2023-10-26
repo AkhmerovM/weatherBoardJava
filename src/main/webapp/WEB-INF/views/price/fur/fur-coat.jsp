@@ -10,7 +10,7 @@
 	<table class="price-list__table table-fur-coat">
 		<tr>
 			<th class="no-brd price-list__pod-category" colspan="2">Изделия из натурального дорогостоящего меха
-				(норка, ласка, песец, соболь, рысь)
+				(норка)
 			</th>
 		</tr>
 		<tr>
@@ -19,23 +19,23 @@
 		</tr>
 		<tr>
 			<td>Шуба длинная свыше 90см, шт.</td>
-			<td>3400</td>
+			<td>4080</td>
 		</tr>
 		<tr>
 			<td>Шуба до 90см. шт.</td>
-			<td>3300</td>
+			<td>3960</td>
 		</tr>
 		<tr>
 			<td>Шуба до бедра. шт.</td>
-			<td>3130</td>
+			<td>3750</td>
 		</tr>
 		<tr>
 			<td>Шапка, берет, шт</td>
-			<td>770</td>
+			<td>925</td>
 		</tr>
 
 		<tr>
-			<th class="no-brd price-list__pod-category"  colspan="2">Изделия из натурального дорогостоящего меха (бобр, енот, каракуль, хвостики норки):
+			<th class="no-brd price-list__pod-category"  colspan="2">Изделия из натурального дорогостоящего меха (бобр, енот, каракуль, кролик):
 			</th>
 		</tr>
 		<tr>
@@ -44,19 +44,23 @@
 		</tr>
 		<tr>
 			<td>Шуба длинная свыше 90 см, шт</td>
-			<td>2380</td>
+			<td>3050</td>
 		</tr>
 		<tr>
 			<td>Шуба до 90см, шт.</td>
-			<td>2290</td>
+			<td>2950</td>
 		</tr>
 		<tr>
 			<td>Шуба до бедра, шт.</td>
-			<td>2200</td>
+			<td>2800</td>
+		</tr>
+		<tr>
+			<td>Жилет меховой, шт.</td>
+			<td>1450</td>
 		</tr>
 
 		<tr>
-			<th class="no-brd price-list__pod-category" colspan="2">Изделия из натуральною не дорогостоящего чехи (козлик, мутон): </th>
+			<th class="no-brd price-list__pod-category" colspan="2">Изделия из натуральною не дорогостоящего меха (козлик, мутон): </th>
 		</tr>
 		<tr>
 			<th class="title">Наименование</th>
@@ -64,19 +68,19 @@
 		</tr>
 		<tr>
 			<td>Шуба длинная свыше 90 см., шт.</td>
-			<td>1580</td>
+			<td>1890</td>
 		</tr>
 		<tr>
 			<td>Шуба до 90 см, шт.</td>
-			<td>1470</td>
+			<td>1760</td>
 		</tr>
 		<tr>
 			<td>Шуба до бедра, шт.</td>
-			<td>1360</td>
+			<td>1630</td>
 		</tr>
 		<tr>
 			<td>Шапка, берет, шт</td>
-			<td>550</td>
+			<td>660</td>
 		</tr>
 	</table>
 </jsp:body>
