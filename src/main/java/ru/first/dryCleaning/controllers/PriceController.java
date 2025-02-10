@@ -14,10 +14,10 @@ public class PriceController {
     public String jeans() {
         return "price/textile/jeans";
     }
-    @GetMapping("/price/toys")
-    public String toys() {
-        return "price/textile/toys";
-    }
+//    @GetMapping("/price/toys")
+//    public String toys() {
+//        return "price/textile/toys";
+//    }
     @GetMapping("/price/coat")
     public String coat() {
         return "price/textile/coat";

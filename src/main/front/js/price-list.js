@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-const config = ['jeans', 'outerwear', 'coat', 'spec', 'fur', 'fur-coat', 'toys', 'car', 'blanket', 'plaid', 'rug', 'linen' ];
+const config = ['jeans', 'outerwear', 'coat', 'spec', 'fur', 'fur-coat', 'car', 'blanket', 'plaid', 'rug', 'linen' ];
 
 $(document).ready(function () {
     const urlParams = window.location.href.split('/');

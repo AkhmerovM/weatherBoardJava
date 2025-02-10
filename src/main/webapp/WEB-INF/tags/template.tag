@@ -38,7 +38,7 @@ padding-bottom:60px;
                         <ul class="price-list__list hidden" data-name="textile">
                             <li class="price-list__item"><a class="price-list__link" data-target="outerwear" href="/price/outerwear">Верхняя одежда</a></li>
                             <li class="price-list__item"><a class="price-list__link" data-target="jeans" href="/price/jeans">Джинса</a></li>
-                            <li class="price-list__item"><a class="price-list__link" data-target="toys" href="/price/toys">Мягкие игрушки</a></li>
+<%--                            <li class="price-list__item"><a class="price-list__link" data-target="toys" href="/price/toys">Мягкие игрушки</a></li>--%>
                             <li class="price-list__item"><a class="price-list__link" data-target="coat" href="/price/coat">Пальто</a></li>
                         </ul>
                     </div>
