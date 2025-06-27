@@ -22,7 +22,7 @@ SET row_security = off;
 -- TOC entry 2997 (class 1262 OID 16386)
 -- Name: dryCleaning; Type: DATABASE; Schema: -; Owner: postgres
 --
-CREATE DATABASE "dryCleaning";
+-- CREATE DATABASE "dryCleaning";
 
 ALTER DATABASE "dryCleaning" OWNER TO postgres;
 
