@@ -1,14 +1,15 @@
 version: "3.9"  # optional since v1.27.0
 services:
   mydb:
+    build: ./db
     image: mydb
     container_name: mydb
-    ports:
-    - 5444:5432
+#    ports:
+#    - 5444:5432
 #    volumes:
 #    - db:/var/lib/postgresql/data
     environment:
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_PASSWORD: 12345qwerT
       POSTGRES_USER: postgres
       POSTGRES_DB: dryCleaning
       PGDATA: /var/lib/postgresql/data/pgdata

@@ -1,6 +1,7 @@
 docker build -t mywebapp .
 docker build -t mydb db/
-docker run -e POSTGRES_PASSWORD=postgres -d mydb postgres -c log_statement=all
+docker run -d -e POSTGRES_PASSWORD=postgres -p 5432:5432 mydb -c log_statement=all
+
 docker exec -it
 
 docker rmi -f $(docker images -q) & docker rm $(docker ps -a -q) & docker volume rm $(docker volume ls -q)
