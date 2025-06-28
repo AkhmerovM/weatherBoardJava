@@ -17,9 +17,17 @@ services:
   app:
     build: .
     image: mywebapp
-    ports:
-      - "8080:8080"
+#    ports:
+#      - "8080:8080"
     restart: always
     links:
       - mydb
+  nginx:
+    build: ./nginx
+    image: nginx
+    ports:
+      - "80:80"
+    container_name: nginx
+    depends_on:
+      - app
 # pg_restore -h localhost -p 5444 -U postgres -d dryCleaning db/dryCleaning.backup
