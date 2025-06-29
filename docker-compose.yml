@@ -28,6 +28,6 @@ services:
     ports:
       - "80:80"
     container_name: nginx
-    depends_on:
+    links:
       - app
 # pg_restore -h localhost -p 5444 -U postgres -d dryCleaning db/dryCleaning.backup
