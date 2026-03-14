@@ -27,7 +27,11 @@ services:
     image: nginx
     ports:
       - "80:80"
+      - "443:443"
     container_name: nginx
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+      - /var/www/certbot:/var/www/certbot:ro
     links:
       - app
 # pg_restore -h localhost -p 5444 -U postgres -d dryCleaning db/dryCleaning.backup
